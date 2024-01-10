@@ -26,7 +26,7 @@ int _eputc(char x)
 	static int a;
 	static char b[CRAFT_BUF_EXTENT];
 
-	if (c == BUF_PURGE || a >= CRAFT_BUF_EXTENT)
+	if (x == BUF_PURGE || a >= CRAFT_BUF_EXTENT)
 	{
 		write(2, b, a);
 		a = 0;

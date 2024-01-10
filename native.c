@@ -57,10 +57,10 @@ int _myworkingdir(insight_t *data)
 		}
 		output_string(_getctxt(data, "OLDPWD=")), output_symbols('\n');
 		change_dir = chdir((b = _getctxt(data, "OLDPWD=")) ?
-				dir : "/");
+				b : "/");
 	}
 	else
-		chande_dir = chdir(data->argv[1]);
+		change_dir = chdir(data->argv[1]);
 	if (change_dir == -1)
 	{
 		print_flaw(data, "can't cd to ");
@@ -85,6 +85,6 @@ int _mysupport(insight_t *data)
 	a = data->argv;
 	output_string("help call works. Function not yet implemented \n");
 	if (0)
-		output_string(a);
+		output_string(*a);
 	return (0);
 }

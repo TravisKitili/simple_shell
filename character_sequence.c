@@ -61,7 +61,7 @@ char *strand_concat(char *endpoint, char *origin)
 		endpoint++;
 	while (*origin)
 		*endpoint++ = *origin++;
-	*endpoint = origin;
+	*endpoint = *origin;
 	return (a);
 }
 

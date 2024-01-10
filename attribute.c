@@ -98,7 +98,7 @@ int replace_parameter(insight_t *data)
 	int a = 0;
 	index_t *b;
 
-	for (a = 0; data->argv[a]; a++;)
+	for (a = 0; data->argv[a]; a++)
 	{
 		if (data->argv[a][0] != '$' || !data->argv[a][1])
 			continue;

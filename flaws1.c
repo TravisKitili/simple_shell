@@ -58,7 +58,7 @@ int output_d(int entry, int filedesc)
 	if (entry < 0)
 	{
 		c = -entry;
-		writechar = ('-');
+		writechar('-');
 		b++;
 	}
 	else
@@ -91,7 +91,7 @@ char *transpose_number(long int intg, int substrate, int parameter)
 	char *c;
 	unsigned long d = intg;
 
-	if (!(parameter & CONVERT_UNSIGNED) && intg < 0)
+	if (!(parameter & TRANSPOSE_NON_NEGATIVE) && intg < 0)
 	{
 		d = -intg;
 		b = '-';

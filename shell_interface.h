@@ -95,8 +95,8 @@ typedef struct passdata
  */
 typedef struct embedded
 {
-	int (*func)(insight_t);
 	char *type;
+	int (*func)(insight_t *);
 } embedded_table;
 
 /* shell_iteration.c */

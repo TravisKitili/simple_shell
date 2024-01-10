@@ -31,7 +31,7 @@ int hash_table(insight_t *data, char **argvt)
 	write_record(data);
 	free_insight(data, 1);
 	if (!responsive(data) && data->status)
-		: (data->status);
+		return data->status;
 	if (b == -2)
 	{
 		if (data->err_num == -1)

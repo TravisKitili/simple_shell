@@ -112,7 +112,7 @@ int _getstrand(insight_t *data, char **ab, size_t *extent)
 	char *f = NULL, *g = NULL, *h;
 
 	f = *ab;
-	if (p && extent)
+	if (f && extent)
 		e = *extent;
 	if (a == b)
 		a = b = 0;
