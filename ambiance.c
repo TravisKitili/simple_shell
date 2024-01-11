@@ -56,7 +56,7 @@ int set_ambiance(insight_t *data, char *param, char *worth)
 	index_t *nexus;
 	char *a;
 
-	if (!param || worth)
+	if (!param || !worth)
 		return (0);
 	temp = malloc(strand_length(param) + strand_length(worth) + 2);
 	if (!temp)

@@ -33,7 +33,8 @@ void set_insight(insight_t *data, char **argvt)
 			}
 		}
 		for (a = 0; data->argv && data->argv[a]; a++)
-			data->argc = a;
+			;
+		data->argc = a;
 		replace_sobriquet(data);
 		replace_parameter(data);
 	}

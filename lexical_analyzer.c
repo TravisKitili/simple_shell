@@ -39,7 +39,8 @@ char **segmentwords(char *strn, char *sep)
 			return (NULL);
 		}
 		for (d = 0; d < c; d++)
-			f[b][d] = 0;
+			f[b][d] = strn[a++];
+		f[b][d] = 0;
 	}
 	f[b] = NULL;
 	return (f);

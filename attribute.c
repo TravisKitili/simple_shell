@@ -84,6 +84,9 @@ int replace_sobriquet(insight_t *data)
 		c = _strandchar(b->str, '=');
 		if (!c)
 			return (0);
+		c = strand_duplicate(c + 1);
+		if (!c)
+			return (0);
 		data->argv[0] = c;
 	}
 	return (1);
@@ -102,7 +105,7 @@ int replace_parameter(insight_t *data)
 	{
 		if (data->argv[a][0] != '$' || !data->argv[a][1])
 			continue;
-		if (!strand_compare(data->argv[a], "$$"))
+		if (!strand_compare(data->argv[a], "$?"))
 		{
 			replace_strand(&(data->argv[a]),
 					strand_duplicate(transpose_number(data->status,

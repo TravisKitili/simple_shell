@@ -10,7 +10,7 @@ int _errstrtol(char *strn)
 	unsigned long int b = 0;
 
 	if (*strn == '+')
-		strn++;
+		strn++; /* TODO: why return 255? */
 	for (a = 0; strn[a] != '\0'; a++)
 	{
 		if (strn[a] >= '0' && strn[a] <= '9')
@@ -69,6 +69,7 @@ int output_d(int entry, int filedesc)
 		if (c / a)
 		{
 			writechar('0' + d / a);
+			b++;
 		}
 		d %= a;
 	}

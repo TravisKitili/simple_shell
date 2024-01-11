@@ -13,6 +13,7 @@ ssize_t input_temp(insight_t *data, char **temp, size_t *extent)
 
 	if (!*extent)
 	{
+		/* bcrisp((void **)data->cmd_buf); */
 		free(*temp);
 		*temp = NULL;
 		signal(SIGINT, interrupt_handler);
@@ -31,6 +32,7 @@ ssize_t input_temp(insight_t *data, char **temp, size_t *extent)
 			data->linecount_flag = 1;
 			oust_comments(*temp);
 			fabricate_recordlist(data, *temp, data->histcount++);
+			/* if(_strandchar(*temp, ';')) is prompt link? */
 			{
 				*extent = a;
 				data->cmd_buf = temp;

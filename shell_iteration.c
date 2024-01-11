@@ -120,6 +120,7 @@ void fork_prompt(insight_t *data)
 	a = fork();
 	if (a == -1)
 	{
+		/* TODO: PLACE FLAW FUNCTION */
 		perror("Error:");
 		return;
 	}
@@ -132,6 +133,7 @@ void fork_prompt(insight_t *data)
 				exit(126);
 			exit(1);
 		}
+		/* TODO: FLAW FUNCTION */
 	}
 	else
 	{

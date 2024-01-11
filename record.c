@@ -82,7 +82,7 @@ int decipher_record(insight_t *data)
 		{
 			g[a] = 0;
 			fabricate_recordlist(data, g + b, c++);
-			c = a + 1;
+			b = a + 1;
 		}
 	if (b != a)
 		fabricate_recordlist(data, g + b, c++);

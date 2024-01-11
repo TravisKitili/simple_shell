@@ -42,7 +42,8 @@ int _myworkingdir(insight_t *data)
 	{
 		b = _getctxt(data, "HOME=");
 		if (!b)
-			change_dir = chdir((b = _getctxt(data, "PWD=")) ?
+			change_dir = /* TODO: what this ought to be? */
+				chdir((b = _getctxt(data, "PWD=")) ?
 					b : "/");
 		else
 			change_dir = chdir(b);
@@ -56,8 +57,9 @@ int _myworkingdir(insight_t *data)
 			return (1);
 		}
 		output_string(_getctxt(data, "OLDPWD=")), output_symbols('\n');
-		change_dir = chdir((b = _getctxt(data, "OLDPWD=")) ?
-				b : "/");
+		change_dir = /* TODO: what this ought to be? */
+			chdir((b = _getctxt(data, "OLDPWD=")) ?
+					b : "/");
 	}
 	else
 		change_dir = chdir(data->argv[1]);
