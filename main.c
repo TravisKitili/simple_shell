@@ -9,7 +9,7 @@ int main(int argct, char **argvt)
 {
 	insight_t data[] = { DATA_INIT };
 	int filedesc = 2;
-	
+
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
 			: "=r" (filedesc)
